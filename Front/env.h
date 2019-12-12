@@ -35,7 +35,7 @@ public:
     graphvizSatisfyingEx(false), graphvizCounterEx(false), 
     externalWhole(false), demo(false), 
     inheritedAcceptance(false), unrestrict(false), 
-    alternativeM2LStr(false), reorder(false), optimize(0) {}
+    alternativeM2LStr(false), reorder(false), info(false), optimize(0) {}
 
   bool time;
   bool whole;
@@ -58,6 +58,7 @@ public:
   bool unrestrict;
   bool alternativeM2LStr;
   bool reorder;
+  bool info;
   unsigned optimize;
 };
 

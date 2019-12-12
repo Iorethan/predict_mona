@@ -179,6 +179,9 @@ ParseArguments(int argc, char *argv[])
 	  case 'r':
 	    options.reorder = false;
 	    break;
+	  case 'a':
+	    options.info = true;
+	    break;
 	  case 'p':
 	    break; // ignore for compatibility
 	  default:
@@ -216,6 +219,7 @@ Usage()
     << " -m   Alternative M2L-Str emulation (v1.3 style)\n"
     << " -h   Inherited acceptance analysis\n"
     << " -u   Unrestrict output automata (create conventional automata)\n\n"
+    << " -a   Parse input formula and exit\n\n"
     << " -gw  Output whole automaton in Graphviz format (implies -n -q)\n"
     << " -gs  Output satisfying example tree in Graphviz format (implies -q)\n"
     << " -gc  Output counter-example tree in Graphviz format (implies -q)\n"
@@ -499,6 +503,9 @@ main(int argc, char *argv[])
       cout << "Formula " << *j << ":\n";
       (*i).dump();
       cout << "\n\n";
+    }
+    if (options.info) {
+      exit(EXIT_SUCCESS);
     }
   }
   
