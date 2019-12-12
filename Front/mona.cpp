@@ -488,6 +488,13 @@ main(int argc, char *argv[])
     }
   }
   
+  if (options.info) {
+    // Dump code
+    cout << "\nMain formula:\n";
+    formulaCode.dump();
+    exit(EXIT_SUCCESS);
+  }
+  
   if (options.dump) {
     // Dump symboltable
     symbolTable.dump();
@@ -503,9 +510,6 @@ main(int argc, char *argv[])
       cout << "Formula " << *j << ":\n";
       (*i).dump();
       cout << "\n\n";
-    }
-    if (options.info) {
-      exit(EXIT_SUCCESS);
     }
   }
   

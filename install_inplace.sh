@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
 mkdir -p "executables"
-cd "executables"
-./configure "--prefix=`pwd`"
+./configure "--prefix=`pwd`/executables/"
 make install-strip
